@@ -14,6 +14,8 @@ describe('authors routes', () => {
     const phil = res.body.find((char) => char.id === '2');
     expect(phil).toHaveProperty('first_name', 'Phil');
     expect(phil).toHaveProperty('last_name', 'Hartman');
+    expect(phil).toHaveProperty('dob', 1952);
+    expect(phil).toHaveProperty('pob', 'California');
   });
   afterAll(() => {
     pool.end();
