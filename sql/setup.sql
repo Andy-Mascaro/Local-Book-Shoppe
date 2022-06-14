@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS works;
 
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -45,3 +46,10 @@ INSERT INTO books (
 )
 VALUES
 ('Bob is great', 2022);
+
+INSERT INTO works (
+    author_id,
+    book_id
+)
+VALUES
+(1, 1 );
