@@ -4,13 +4,13 @@ DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS books;
 
 CREATE TABLE authors (
-    id BIGINT GENERATED ALWAYS IDENTITY PRIMARY KEY,
-    firtst_name VARCHAR,
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    first_name VARCHAR,
     last_name VARCHAR
 );
 
 CREATE TABLE books (
-    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR(240) NOT NULL,
     published INT NOT NULL 
 );
@@ -24,16 +24,17 @@ CREATE TABLE works (
 );
 
 INSERT INTO authors (
-    firtst_name,
+    first_name,
     last_name
 )
 
 VALUES
-('Bob', 'Bob');
+('Bob', 'Bob'),
+('Phil', 'Hartman');
 
 INSERT INTO books (
     title,
-    published
+    published 
 )
 VALUES
 ('Bob is great', 2022);
