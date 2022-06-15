@@ -10,12 +10,12 @@ describe('authors routes', () => {
 
   it('should return a list of authors', async () => {
     const res = await request(app).get('/authors');
-    expect(res.body.length).toEqual(2);
-    const phil = res.body.find((char) => char.id === '2');
-    expect(phil).toHaveProperty('first_name', 'Phil');
-    expect(phil).toHaveProperty('last_name', 'Hartman');
-    expect(phil).toHaveProperty('dob', 1952);
-    expect(phil).toHaveProperty('pob', 'California');
+    expect(res.body.length).toEqual(5);
+    const john = res.body.find((char) => char.id === '1');
+    expect(john).toHaveProperty('first_name', 'John');
+    expect(john).toHaveProperty('last_name', 'Grisham');
+    expect(john).toHaveProperty('dob', 1955);
+    expect(john).toHaveProperty('pob', 'Arkansas US');
   });
   afterAll(() => {
     pool.end();
