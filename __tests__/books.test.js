@@ -10,10 +10,9 @@ describe('books routes', () => {
 
   it('should return a list of books', async () => {
     const res = await request(app).get('/books');
-    expect(res.body.length).toEqual(1);
+    expect(res.body.length).toEqual(6);
     const book = res.body.find((char) => char.id === '1');
-    expect(book).toHaveProperty('title', 'Bob is great');
-    expect(book).toHaveProperty('published', 2022);
+    expect(book).toHaveProperty('title', 'A TIME TO KILL');
   });
   afterAll(() => {
     pool.end();
