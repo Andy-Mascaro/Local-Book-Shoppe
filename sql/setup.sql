@@ -1,8 +1,9 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS authors;
-DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS works;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
+
 
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -36,8 +37,11 @@ INSERT INTO authors (
 )
 
 VALUES
-('Bob', 'Bob', 1492, 'Space'),
-('Phil', 'Hartman', 1952, 'California');
+('John', 'Grisham', 1955, 'Arkansas US'),
+('Ernest', 'Hemingway', 1899, 'Illinois US'),
+('John', 'Steinbeck', 1902, 'California US'),
+('Vladimir', 'Nabokov', 1899, 'Saint Petersburg'),
+('Truman', 'Capote', 1924, 'Louisiana US');
 
 
 INSERT INTO books (
@@ -45,11 +49,26 @@ INSERT INTO books (
     published 
 )
 VALUES
-('Bob is great', 2022);
+('A TIME TO KILL', 1989),
+('THE SUN ALSO RISES', 1926),
+('A FAREWELL TO ARMS', 1929),
+('THE GRAPES OF WRATH', 1939),
+('PALE FIRE', 1962),
+('IN COLD BLOOD', 1966);
+
+
+
+
 
 INSERT INTO works (
     author_id,
     book_id
 )
 VALUES
-(1, 1 );
+(1,1),
+(2,2),
+(2,3),
+(3,4),
+(4,5),
+(5,6);
+
