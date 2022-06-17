@@ -18,7 +18,7 @@ describe('books routes', () => {
   it('should show author with book', async () => {
     const res = await request(app).get('/books/5');
     const book = {
-      id: '4',
+      id: '5',
       title: 'PALE FIRE',
       published: 1962,
       authors: [
@@ -33,6 +33,17 @@ describe('books routes', () => {
     };
     expect(res.body).toEqual(book);
   });
+
+  it('POST /books should create a new book', async () => {
+    const resp = await request(app).post('/books').send({
+      title: 'Friday',
+      published: 1999,
+    });
+
+    expect(resp.body.title).toEqual('Friday');
+    expect(resp.body.published).toEqual(1999);
+  });
+
   afterAll(() => {
     pool.end();
   });
