@@ -39,7 +39,6 @@ describe('books routes', () => {
       title: 'Friday',
       published: 1999,
     });
-
     expect(resp.body.title).toEqual('Friday');
     expect(resp.body.published).toEqual(1999);
   });
