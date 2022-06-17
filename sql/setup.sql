@@ -19,7 +19,7 @@ CREATE TABLE books (
 );
 
 CREATE TABLE works (
-    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     author_id BIGINT,
     book_id BIGINT,
     FOREIGN KEY (author_id) REFERENCES authors(id),
