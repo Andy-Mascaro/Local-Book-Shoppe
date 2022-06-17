@@ -36,19 +36,19 @@ describe('authors routes', () => {
   });
 
   it('POST /authors should create a new author', async () => {
-    const res = await (
-      await request(app).post('/authors')
-    ).send({
+    const res = await request(app).post('/authors').send({
       first_name: 'Frank',
       last_name: 'Williams',
       dob: 2000,
       pob: 'Washington US',
     });
+
     expect(res.body.first_name).toEqual('Frank');
     expect(res.body.last_name).toEqual('Williams');
     expect(res.body.dob).toEqual(2000);
-    expect(res.body.pob).toEqual('Washington');
+    expect(res.body.pob).toEqual('Washington US');
   });
+
   afterAll(() => {
     pool.end();
   });
